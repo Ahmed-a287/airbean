@@ -1,0 +1,91 @@
+@import "../../utilities/variables.scss";
+
+
+.cart{
+    width: 375px;
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background-color: white;
+    
+}
+.xIcon{
+    display: flex;
+}
+
+.cartTitle{
+    text-align: center;
+    font-family: $ptFont;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.coffeeName{
+    font-family: $ptFont;
+    font-size: 1.3rem;
+    font-weight: 700;
+    align-items: center;
+    color:black;
+    display:grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-template-rows: 1fr 20px;
+}
+
+.quantityHolders{
+    display: inline-flex;
+    flex-direction: column;
+    grid-column: 3;
+    grid-row: 1/ 2;
+    margin-left: 4rem;
+    font-family: $workFont;
+}
+
+.quantityBtn{
+    background-color: white;
+    border-style: none;
+}
+
+.quantityNr{
+    text-align: center;
+    margin-top: -.0rem;
+    margin-bottom: -.0rem;
+    font-family: $workFont;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.itemPrice{
+    font-family: $workFont;
+    font-size: 0.8rem;
+    font-weight: 400;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.totalLine{
+    display: inline-flex;
+    justify-content: space-between;
+    font-family: $ptFont;
+    font-size: 1.4rem;
+
+}
+.priceInfo{
+    margin-top: -1rem;
+    font-family: $workFont;
+    font-size: 0.7rem;
+}
+
+.takeBtn{
+    align-self: center;
+    width: 248px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: rgb(47, 41, 38);
+    color: white;
+    font-family: $ptFont;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
