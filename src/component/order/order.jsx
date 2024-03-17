@@ -4,10 +4,12 @@ import droneIcon from "../../assets/drone.svg";
 import { useNavigate } from "react-router-dom";
 
 function Order() {
+  //hämtar order nr och ETA för inlagd order
   const { orderNr, eta } = useStore((state) => ({
     orderNr: state.orderNr,
     eta: state.eta,
   }));
+  //tömmer carten med denna funktion
   const clearCart = useStore((state) => state.clearCart);
   const navigate = useNavigate();
   const handleButtonClick = () => {

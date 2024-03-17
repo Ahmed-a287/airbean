@@ -5,6 +5,7 @@ import navIcn from "../../assets/navicon.svg";
 import { Link } from "react-router-dom";
 
 function About() {
+  //ett annat sätt för bakgrund
   const style = {
     backgroundImage: `url(${aboutBackground})`,
     backgroundSize: "cover",

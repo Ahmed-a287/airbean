@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
+    //hela "Home" sidan reagerar som en knapp
     <div className="home">
       {
         <Link to="/menu" title="Meny">

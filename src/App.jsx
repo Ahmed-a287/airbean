@@ -11,6 +11,7 @@ import "./App.css";
 
 function App() {
   return (
+    // Routen för att navigera i appen
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />

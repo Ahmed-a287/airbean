@@ -6,7 +6,7 @@ import useStore from "../../store/store";
 
 const Header = () => {
   const { cart } = useStore();
-
+  //för att räkna antal produkter som finns i cart
   const totalQuantity = cart.reduce(
     (total, cartItem) => total + cartItem.quantity,
     0

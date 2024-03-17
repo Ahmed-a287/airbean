@@ -6,27 +6,32 @@ import "./cart.scss";
 import xIcon from "../../assets/close.svg";
 function Cart() {
   const { cart, increaseQuantity, decreaseQuantity, sendOrder } = useStore();
+  // tar fram totala värdet av product i cart
   let total = cart.reduce(
     (acc, item) => acc + item.item.price * item.quantity,
     0
   );
-
+  //en react sätt för att navigera "specifikt"
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
   };
+
   return (
     <div className="cart">
-      {/* En go back button */}
+      {/* En "go back" button, för att komma ett steg bak i navigering*/}
       <button onClick={goBack} style={{ border: "none", background: "none" }}>
         <img className="xIcon" src={xIcon} alt="X icon" />
       </button>
 
       <h1 className="cartTitle">Din beställning</h1>
+      {/* cart är arrayen all beställingng sparas */}
       {cart.map((item, index) => (
+        /* använder map för att rendera alla produkt i cart */
         <h3 className="coffeeName" key={index}>
           {item.item.title}
           <div className="quantityHolders">
+            {/* en lägg till och ta bort knapp */}
             <button
               className="quantityBtn"
               onClick={() => increaseQuantity(item.item.title)}
@@ -52,7 +57,7 @@ function Cart() {
       <p className="priceInfo">inkl moms + drönarleverans</p>
 
       <br />
-      {/* För att skicka ordern först och sen ta använderen vidare till orderstatus*/}
+      {/* onClick för att skicka ordern först och sen ta använderen vidare till orderstatus*/}
       <button
         className="takeBtn"
         onClick={() => {
@@ -60,7 +65,7 @@ function Cart() {
             sendOrder(cart);
             navigate("/order");
           } else {
-            //Ifall varukorgen är tom
+            //ifall varukorgen är tom
             alert("Din varukorg är tom!");
           }
         }}

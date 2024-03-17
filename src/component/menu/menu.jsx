@@ -5,8 +5,9 @@ import "./menu.scss";
 
 const Menu = () => {
   const { addToCart } = useStore();
+  //lista med alla kaffe
   const [coffee, setCoffee] = useState([]);
-
+  //useEffect används här så att hemsidan renderas först medan data hämtas från API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,13 +15,14 @@ const Menu = () => {
           "https://airbean-api-xjlcn.ondigitalocean.app/api/beans/"
         );
         const data = await response.json();
-        console.log("coffee", data.menu);
+        //uppdaterar coffee med ny data
         setCoffee(data);
       } catch (error) {
         console.error("Oops!", error);
       }
     };
     fetchData();
+    // dependency array finns här så attusEffect körs en gång
   }, []);
 
   return (
@@ -45,7 +47,8 @@ const Menu = () => {
                 </div>
               </li>
             ))
-          : "Loading..."}{" "}
+          : //visas medan api hämtas
+            "Loading..."}
       </ul>
     </div>
   );

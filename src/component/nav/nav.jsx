@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Nav() {
+  //en react sätt för att navigera "specifikt"
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
